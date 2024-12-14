@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 Contagem Natalina e Receitas 🎅</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🎄 Contagem Regressiva para o Natal 🎅</h1>
+    <p>Entre no clima natalino com nossa contagem regressiva e receitas deliciosas!</p>
+  </header>
+
+  <main>
+    <!-- Contagem Regressiva -->
+    <section id="countdown">
+      <h2>Quanto falta para o Natal?</h2>
+      <div id="timer">Carregando...</div>
+    </section>
+
+    <!-- Receitas Natalinas -->
+    <section id="recipes">
+      <h2>Receitas Natalinas</h2>
+
+      <!-- Receita 1 -->
+      <div class="recipe">
+        <h3>Biscoitos Natalinos</h3>
+        <img src="img/biscoito e natal.jpeg" alt="Biscoitos Natalinos">
+        <p><span class="highlight">Ingredientes:</span></p>
+        <ul>
+          <li>2 xícaras de farinha de trigo</li>
+          <li>1 xícara de açúcar</li>
+          <li>1 colher de chá de essência de baunilha</li>
+          <li>1/2 xícara de manteiga</li>
+          <li>1 ovo</li>
+        </ul>
+        <p><span class="highlight">Modo de Preparo:</span> Misture os ingredientes, molde os biscoitos e asse por 15 minutos a 180°C.</p>
+      </div>
+
+      <!-- Receita 2 -->
+      <div class="recipe">
+        <h3>Rabanada Tradicional</h3>
+        <img src="img/rabanada.jpeg" alt="Rabanada Tradicional">
+        <p><span class="highlight">Ingredientes:</span></p>
+        <ul>
+          <li>1 pão amanhecido</li>
+          <li>2 ovos</li>
+          <li>1 xícara de leite</li>
+          <li>Açúcar e canela para polvilhar</li>
+          <li>Óleo para fritar</li>
+        </ul>
+        <p><span class="highlight">Modo de Preparo:</span> Molhe as fatias de pão no leite, passe nos ovos batidos e frite até dourar. Finalize com açúcar e canela.</p>
+      </div>
+
+      <!-- Receita 3 -->
+      <div class="recipe">
+        <h3>Pavê de Chocolate</h3>
+        <img src="img/pave de chocolate.jpeg" alt="Pavê de Chocolate">
+        <p><span class="highlight">Ingredientes:</span></p>
+        <ul>
+          <li>1 pacote de biscoito maisena</li>
+          <li>500 ml de leite</li>
+          <li>1 lata de leite condensado</li>
+          <li>200 g de chocolate meio amargo</li>
+          <li>1 caixa de creme de leite</li>
+        </ul>
+        <p><span class="highlight">Modo de Preparo:</span> Monte camadas de biscoito, creme e chocolate derretido. Finalize com creme de leite e leve à geladeira por 3 horas.</p>
+      </div>
+
+      <!-- Receita 4 -->
+      <div class="recipe">
+        <h3>Peru Assado</h3>
+        <img src="img/peru.jpeg" alt="Peru Assado">
+        <p><span class="highlight">Ingredientes:</span></p>
+        <ul>
+          <li>1 peru de aproximadamente 5 kg</li>
+          <li>Suco de 5 laranjas</li>
+          <li>5 dentes de alho</li>
+          <li>1 xícara de vinho branco seco</li>
+          <li>Ervas frescas a gosto</li>
+        </ul>
+        <p><span class="highlight">Modo de Preparo:</span> Tempere o peru com todos os ingredientes e deixe marinando por 12 horas. Asse em forno médio por 3 horas, regando com o caldo da assadeira.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 - Feliz Natal! 🎄 Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Contagem Regressiva para o Natal
+    const countdown = () => {
+      const now = new Date();
+      const christmas = new Date(now.getFullYear(), 11, 25); // 25 de dezembro
+      const diff = christmas - now;
+
+      if (diff <= 0) {
+        document.getElementById('timer').textContent = "🎉 Feliz Natal! 🎄";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('timer').textContent =
+        `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
